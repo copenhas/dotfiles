@@ -1,6 +1,8 @@
 Profiles
 ========
 
+If you decide to use a full profile you might want to do a git checkout then just link the directories you want into your $HOME.
+
 vim
 ---
 
