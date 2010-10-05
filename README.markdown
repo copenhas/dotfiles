@@ -16,5 +16,6 @@ This will probably turn into a VIM environment starter kit of somekind since I h
 * Python: omnifunc plugin (find what I used to use)
 * Python: Figure out what tester I want to use and tie it into the errorformat option...possibly makeprg
 * Python: make sure folding works as expected, otherwise look for plugin
-* Ruby: everything!
-* C#/Mono: everything! 
+* Python: get ropevim in here for refactoring python
+* Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
+* C#/Mono: everything! same as ruby
