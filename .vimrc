@@ -20,7 +20,7 @@
     " it can interfere with some commands since they were not
     " supported in VI. At this point there is no reason for it. 
     set nocompatible
-
+    
     " VIM will try to determine the filetype and setup extra settings
     " This will not work with compability mode on.
     filetype on
@@ -78,6 +78,20 @@
     " to make it a little easier.
     " Remember you can use ':cc' to jump to first error
     nnoremap <leader>b :make<cr>
+
+    " Remap the tab key to do autocompletion or 
+    " indentation depending on the context 
+    " from http://www.vim.org/tips/tip.php?tip_id=102
+    function! InsertTabWrapper()
+        let col = col('.') - 1
+        if !col || getline('.')[col - 1] !~ '\k'
+            return "\<tab>"
+        else
+            return "\<c-p>"
+        endif
+    endfunction
+    inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+    inoremap <s-tab> <c-n>
 
 " }
 
@@ -167,7 +181,7 @@
     " $HOME/.vim/colors. This would apply to all VIM instances.
     " Move this to .gvimrc or override there to have different 
     " color schemes
-    colorscheme molokai
+    colorscheme sonofobsidian 
 
 " }
 
@@ -209,6 +223,13 @@
         " Also make sure the tabs get expanded to spaces
         autocmd filetype python set expandtab
 
+        " The pythoncomplete plugin gives us much better autocompletion
+        autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+        " Since python already uses indention to represent code
+        " blocks we can get away with just setting the foldmethod
+        " to indention for Python.
+        autocmd FileType python set foldmethod=indent
     endif
 
 " }
