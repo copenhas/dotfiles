@@ -11,11 +11,11 @@ I have started this profile from scratch to try and learn more about customizing
 This will probably turn into a VIM environment starter kit of somekind since I haven't really run across any so far. For right now I want to focus on getting a Python and Ruby environment going. Possibly C#/Mono after that.
 
 Found these links helpful:
-[Coming Home To VIM](http://stevelosh.com/blog/2010/09/coming-home-to-vim/#a-language-of-text-editing)
-[Seven Habits for Effective Text Editing](http://www.moolenaar.net/habits.html)
-[A Byte of VIM](http://www.swaroopch.com/notes/Vim_en:Table_of_Contents)
-[VIM Docs](http://vimdoc.sourceforge.net/htmldoc/)
-[How I Boosted my VIM](http://nvie.com/posts/how-i-boosted-my-vim/)
+* [Coming Home To VIM](http://stevelosh.com/blog/2010/09/coming-home-to-vim/#a-language-of-text-editing)
+* [Seven Habits for Effective Text Editing](http://www.moolenaar.net/habits.html)
+* [A Byte of VIM](http://www.swaroopch.com/notes/Vim_en:Table_of_Contents)
+* [VIM Docs](http://vimdoc.sourceforge.net/htmldoc/)
+* [How I Boosted my VIM](http://nvie.com/posts/how-i-boosted-my-vim/)
 
 ### Plugins Included:
 General:
