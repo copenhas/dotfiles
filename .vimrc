@@ -223,6 +223,12 @@
     " http://bitbucket.org/agr/ropevim/src
     let $PYTHONPATH .= ":/Users/seancopenhaver/.vim/bundle/ropevim/ftplugin/python/"
 
+    " pyflakes uses the quickfix list by default but it will 
+    " override all other uses of quickfix (such as :vimgrep or :make)
+    " by default it's enabled, but since we are going to rely on
+    " other plug-ins lets disable it
+    let g:pyflakes_use_quickfix = 0
+
     if has('autocmd')
 
         " If we are editing a python file we want to make sure we
@@ -242,6 +248,17 @@
         " blocks we can get away with just setting the foldmethod
         " to indention for Python.
         autocmd FileType python set foldmethod=indent
+
+        " Compiler options use a plug-in to tie in the settings for
+        " error output and making the program. You can do this in a
+        " more manual fashion by setting the makeprg and errorformat
+        " options yourself
+        "
+        " Nose is a test runner for python that uses conventions
+        " to discover and run your tests. This plug-in ties it into
+        " VIM to take advantage of quickfix lists 
+        " :cc and :cl are useful commands
+        autocmd FileType python compiler nose
 
     endif
 
