@@ -31,12 +31,11 @@ General:
 
 Python:
 
-#### Depends on: nose
-
 * pyflakes - Python code checker (does error underline)
 * pythoncomplete - Python code completion
 * ropevim - Python refactoring tools
 * nosecompiler - uses the nosetests command run tests based on convention
+#### depends on `nose`: $ `sudo easy_install nose`
 
 ### VIM Profile TODO
 * Learn more about ctags and how to tie them into projects easily

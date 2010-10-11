@@ -181,7 +181,7 @@
     " $HOME/.vim/colors. This would apply to all VIM instances.
     " Move this to .gvimrc or override there to have different 
     " color schemes
-    colorscheme sonofobsidian 
+    colorscheme molokai 
 
 " }
 
