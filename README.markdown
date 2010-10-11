@@ -30,11 +30,11 @@ Python:
 
 * pyflakes - Python code checker (does error underline)
 * pythoncomplete - Python code completion
+* ropevim - Python refactoring tools
 
 ### VIM Profile TODO
 * Learn more about ctags and how to tie them into projects easily
 * Python: Figure out what tester I want to use and tie it into the errorformat option...possibly makeprg
-* Python: get ropevim in here for refactoring python
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
 * C#/Mono: everything! same as ruby
 * Erlang: everything

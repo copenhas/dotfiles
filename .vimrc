@@ -217,6 +217,10 @@
     " we included the python modules it depends on in its
     " directory. So we have to add that directory to VIM's 
     " PYTHONPATH manually
+    "
+    " To take advantage of these features it is highly recommended
+    " to check out its project page:
+    " http://bitbucket.org/agr/ropevim/src
     let $PYTHONPATH .= ":/Users/seancopenhaver/.vim/bundle/ropevim/ftplugin/python/"
 
     if has('autocmd')
