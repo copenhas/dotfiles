@@ -43,3 +43,8 @@ Python:
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
 * C#/Mono: everything! same as ruby
 * Erlang: everything
+
+bash
+----
+
+Not a lot here just some stuff to load a couple of bash completion files and add macports to the path.
