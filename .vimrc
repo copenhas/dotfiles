@@ -212,7 +212,15 @@
 
 " Python {
 
+    " ropevim gives us refactoring abilities for python
+    " but so we can have an inclusive plugin installation
+    " we included the python modules it depends on in its
+    " directory. So we have to add that directory to VIM's 
+    " PYTHONPATH manually
+    let $PYTHONPATH .= ":/Users/seancopenhaver/.vim/bundle/ropevim/ftplugin/python/"
+
     if has('autocmd')
+
         " If we are editing a python file we want to make sure we
         " can visually see all the now important whitespace
         " Turn on the feature
@@ -230,7 +238,9 @@
         " blocks we can get away with just setting the foldmethod
         " to indention for Python.
         autocmd FileType python set foldmethod=indent
+
     endif
+
 
 " }
 
