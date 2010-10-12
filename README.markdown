@@ -48,3 +48,5 @@ bash
 ----
 
 Not a lot here just some stuff to load a couple of bash completion files and add macports to the path.
+
+Trying to use a .bash/ directory (similar to .vim) to put any bash "plugins" and a line in the profile to load `*.bash` from $HOME/.bash/
