@@ -210,6 +210,17 @@
 
 " }
 
+
+" NERDTree {
+
+    " NERDTree is an excellent directory browser plugin. Lets make it
+    " quicker to access by mapping it to '<leader>f'. The <leader>
+    " key is '\' by default.
+    map <leader>f :NERDTreeToggle<cr>
+
+" }
+
+
 " Python {
 
     " ropevim gives us refactoring abilities for python
@@ -262,14 +273,25 @@
 
     endif
 
+" }
+
+
+" NOTE: Split this out when it becomes bigger
+" General Development {
+
+    " VIM comes with 'batteries included' you could say Including
+    " these auto-completion scripts for web Development
+    " These are located in your vimruntime directory
+    " check ':help vimruntime'
+    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType sql set omnifunc=sqlcomplete#Complete
+    autocmd FileType c set omnifunc=ccomplete#Complete
+    
+    " I saw this in the plugin but need to check it's documentation still
+    "autocmd FileType ruby :rubycomplete#Init()
+    autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
 " }
 
-" NERDTree {
-
-    " NERDTree is an excellent directory browser plugin. Lets make it
-    " quicker to access by mapping it to '<leader>f'. The <leader>
-    " key is '\' by default.
-    map <leader>f :NERDTreeToggle<cr>
-
-" }

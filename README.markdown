@@ -39,6 +39,7 @@ Python:
 
 ### VIM Profile TODO
 * Learn more about ctags and how to tie them into projects easily
+* Learn about the builtin plugins that's in the vimruntime directory
 * Python: think about including nose with the profile
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
 * C#/Mono: everything! same as ruby
