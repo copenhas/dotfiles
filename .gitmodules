@@ -1,3 +1,6 @@
 [submodule ".vim/bundle/vimerl"]
 	path = .vim/bundle/vimerl
 	url = git://github.com/oscarh/vimerl.git
+[submodule ".vim/bundle/vim-makegreen"]
+	path = .vim/bundle/vim-makegreen
+	url = git://github.com/reinh/vim-makegreen.git
