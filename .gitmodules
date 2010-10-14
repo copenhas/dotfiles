@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/vim-nosecompiler"]
 	path = .vim/bundle/vim-nosecompiler
 	url = git://github.com/olethanh/Vim-nosecompiler.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
