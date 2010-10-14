@@ -14,24 +14,17 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" System {
+" NOTE: This should be first
+" By default VIM starts up in VI compatibility mode but 
+" it can interfere with some commands since they were not
+" supported in VI. At this point there is no reason for it. 
+set nocompatible
 
-    " By default VIM starts up in VI compatibility mode but 
-    " it can interfere with some commands since they were not
-    " supported in VI. At this point there is no reason for it. 
-    set nocompatible
-    
-    " VIM will try to determine the filetype and setup extra settings
-    " This will not work with compability mode on.
-    filetype on
 
-    " Once VIM knows what filetype you are editing it will
-    " try to run the plug-in for that filetype. It will attempt to
-    " load $HOME/.vim/ftplugin/<type>.vim
-    filetype plugin on
+" Pathogen {
 
-    " Use the filetype to determine indention schemes
-    filetype indent on
+    " NOTE: We have to get pathogen setup before the filetype 
+    " options to make sure it loads everything correctly
 
     " By default the .vim directory follows a similar convention to
     " the Linux filesystem with special directories to put the
@@ -45,6 +38,24 @@
     " Generates all the helptags for the bundles pathogen loads
     " You can then access topics with the normal ':h <search/topic>'
     call pathogen#helptags()
+
+" }
+
+
+" System {
+    
+    " VIM will try to determine the filetype and setup extra settings
+    " This will not work with compability mode on.
+    filetype on
+
+    " Once VIM knows what filetype you are editing it will
+    " try to run the plug-in for that filetype. It will attempt to
+    " load $HOME/.vim/ftplugin/<type>.vim
+    filetype plugin on
+
+    " Use the filetype to determine indention schemes
+    filetype indent on
+
 
     " If VIM has been compiled with unicode support then lets use it
     " Taken from: http://vim.wikia.com/wiki/Working_with_Unicode
@@ -142,6 +153,7 @@
 
 " }
 
+
 " Buffers {
     
     " You use the Ctrl + w + movement to move focus between 
@@ -151,7 +163,6 @@
     map <C-j> <C-w>j
     map <C-k> <C-w>k
     map <C-l> <C-w>l
-
 
     " Keeps buffers open when you start to edit another file. They
     " are just kept in the background or hidden from view. Access
@@ -288,6 +299,7 @@
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     autocmd FileType sql set omnifunc=sqlcomplete#Complete
     autocmd FileType c set omnifunc=ccomplete#Complete
+    autocmd FileType erlang set omnifunc=erlangcomplete#Complete
     
     " I saw this in the plugin but need to check it's documentation still
     "autocmd FileType ruby :rubycomplete#Init()
