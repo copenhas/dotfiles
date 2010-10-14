@@ -290,23 +290,45 @@ set nocompatible
 " }
 
 
+" Erlang {
+
+    if has('autocmd')
+
+        " vimerl gives us omnicompletion based on erlang's natural
+        " introspection abilities, so let's use it.
+        autocmd FileType erlang set omnifunc=erlangcomplete#Complete
+
+        " Erlang's 'equal to or less than' operator is backwards
+        " when compared to...just about everything. Let's set an
+        " abbreivation to do the swap for us.
+        autocmd FileType erlang ab <= =< 
+
+    endif
+
+" }
+
+
 " NOTE: Split this out when it becomes bigger
 " General Development {
 
-    " VIM comes with 'batteries included' you could say Including
-    " these auto-completion scripts for web Development
-    " These are located in your vimruntime directory
-    " check ':help vimruntime'
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType sql set omnifunc=sqlcomplete#Complete
-    autocmd FileType c set omnifunc=ccomplete#Complete
-    autocmd FileType erlang set omnifunc=erlangcomplete#Complete
-    
-    " I saw this in the plugin but need to check it's documentation still
-    "autocmd FileType ruby :rubycomplete#Init()
-    autocmd FileType ruby set omnifunc=rubycomplete#Complete
+    if has('autocmd')
+
+        " VIM comes with 'batteries included' you could say Including
+        " these auto-completion scripts for web Development
+        " These are located in your vimruntime directory
+        " check ':help vimruntime'
+        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+        autocmd FileType sql set omnifunc=sqlcomplete#Complete
+        autocmd FileType c set omnifunc=ccomplete#Complete
+        
+        " I saw this in the plugin but need to check it's 
+        " documentation still
+        "autocmd FileType ruby :rubycomplete#Init()
+        autocmd FileType ruby set omnifunc=rubycomplete#Complete
+
+    endif
 
 " }
 
