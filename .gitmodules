@@ -1,0 +1,3 @@
+[submodule ".vim/bundle/vimerl"]
+	path = .vim/bundle/vimerl
+	url = git://github.com/oscarh/vimerl.git
