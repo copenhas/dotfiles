@@ -1,10 +1,32 @@
 Profiles
 ========
 
-If you decide to use a full profile you might want to do a git checkout then just link the directories you want into your $HOME.
+If you decide to use a full profile you might want to do a git checkout then just link the directories you want into your $HOME. Also I'm trying to use submodules where possible so you'll need to make sure to init and update them to pull the code. Checkout the .gitmodules file to see what are submodule.
+
+### Overall Installation
+
+    $ mkdir /path/for/dotfiles
+    $ cd /path/for/dotfiles
+    $ git init
+    $ git checkout git://github.com/copenhas/dotfiles.git
+    $ git submodule init
+    $ git submodule update
+    ...
+
 
 vim
 ---
+
+### Installation
+
+Here are just some reminder commands for using git to grab the profiles and symlinking the ones wanted for use.
+
+    $ ln -s /path/for/dotfiles/.vim $HOME/.vim
+    $ ln -s /path/for/dotfiles/.vimrc $HOME/.vimrc
+    $ ln -s /path/for/dotfiles/.gvimrc $HOME/.vimrc
+
+
+### Description
 
 I have started this profile from scratch to try and learn more about customizing VIM. I'm trying to keep it somewhat organized and documented for any who want to learn from it. 
 
@@ -43,11 +65,20 @@ Python:
 * Python: think about including nose with the profile
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
 * C#/Mono: everything! same as ruby
-* Erlang: everything
+* Erlang: test out the vimerl plugin 
+
 
 bash
 ----
 
-Not a lot here just some stuff to load a couple of bash completion files and add macports to the path.
+### Installation
 
-Trying to use a .bash/ directory (similar to .vim) to put any bash "plugins" and a line in the profile to load `*.bash` from $HOME/.bash/
+Reminder commands for what's needed to use the profile
+
+    $ ln -s /path/for/dotfiles/.bash $HOME/.bash
+    $ ln -s /path/for/dotfiles/.bash_profile $HOME/.bash_profile
+
+
+### Description
+
+Not a lot here just some stuff to load a couple of bash completion files and add macports to the path. Trying to use a .bash/ directory (similar to .vim) to put any bash "plugins" and a line in the profile to load `*.bash` from $HOME/.bash/
