@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/vim-autocomplpop"]
 	path = .vim/bundle/vim-autocomplpop
 	url = git://github.com/clones/vim-autocomplpop.git
+[submodule ".vim/bundle/vim-nosecompiler"]
+	path = .vim/bundle/vim-nosecompiler
+	url = git://github.com/olethanh/Vim-nosecompiler.git
