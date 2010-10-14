@@ -229,6 +229,9 @@ set nocompatible
     " key is '\' by default.
     map <leader>f :NERDTreeToggle<cr>
 
+    " Setup some file ignores
+    let NERDTreeIgnore=['\.pyc$', '\.beam$']
+
 " }
 
 
