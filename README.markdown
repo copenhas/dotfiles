@@ -63,6 +63,8 @@ Python:
 * Learn more about ctags and how to tie them into projects easily
 * Learn about the builtin plugins that's in the vimruntime directory
 * Python: think about including nose with the profile
+* Python: think about splitting ropevim's python module out as a dependency like nose
+* Python: think about splitting out pyflakes
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
 * C#/Mono: everything! same as ruby
 * Erlang: test out the vimerl plugin 
