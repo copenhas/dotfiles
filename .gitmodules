@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/vim-makegreen"]
 	path = .vim/bundle/vim-makegreen
 	url = git://github.com/reinh/vim-makegreen.git
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
