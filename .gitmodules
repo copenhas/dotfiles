@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-autocomplpop"]
+	path = .vim/bundle/vim-autocomplpop
+	url = git://github.com/clones/vim-autocomplpop.git
