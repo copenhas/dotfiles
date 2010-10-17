@@ -246,7 +246,7 @@ set nocompatible
     " To take advantage of these features it is highly recommended
     " to check out its project page:
     " http://bitbucket.org/agr/ropevim/src
-    let $PYTHONPATH .= ":/Users/seancopenhaver/.vim/bundle/ropevim/ftplugin/python/"
+    let $PYTHONPATH .= ":$HOME/.vim/bundle/ropevim/ftplugin/python/"
 
     " pyflakes uses the quickfix list by default but it will 
     " override all other uses of quickfix (such as :vimgrep or :make)
