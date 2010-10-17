@@ -294,6 +294,16 @@ set nocompatible
 
     if has('autocmd')
 
+        " vimerl can use the man pages for completion but with MacPorts
+        " they are located in a different directory then the expected
+        " default: /usr/lib/erlang/man
+        let g:erlangManPath="/opt/local/lib/erlang/man"
+
+        " Since we are using pathogen for bundle style plugin management
+        " we have to set the location of the check file which is used
+        " with the compiler
+        let g:erlangCheckFile="$HOME/.vim/bundle/vimerl/compiler/erlang_check_file.erl"
+
         " vimerl gives us omnicompletion based on erlang's natural
         " introspection abilities, so let's use it.
         autocmd FileType erlang set omnifunc=erlangcomplete#Complete
@@ -302,6 +312,9 @@ set nocompatible
         " when compared to...just about everything. Let's set an
         " abbreivation to do the swap for us.
         autocmd FileType erlang ab <= =< 
+
+        " Setting the compiler explicitly
+        autocmd FileType erlang compiler erlang
 
     endif
 
