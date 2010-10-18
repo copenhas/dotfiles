@@ -246,7 +246,7 @@ set nocompatible
     " To take advantage of these features it is highly recommended
     " to check out its project page:
     " http://bitbucket.org/agr/ropevim/src
-    let $PYTHONPATH .= ":$HOME/.vim/bundle/ropevim/ftplugin/python/"
+    let $PYTHONPATH .= ":/Users/seancopenhaver/.vim/bundle/ropevim/ftplugin/python/"
 
     " pyflakes uses the quickfix list by default but it will 
     " override all other uses of quickfix (such as :vimgrep or :make)
@@ -302,7 +302,7 @@ set nocompatible
         " Since we are using pathogen for bundle style plugin management
         " we have to set the location of the check file which is used
         " with the compiler
-        let g:erlangCheckFile="$HOME/.vim/bundle/vimerl/compiler/erlang_check_file.erl"
+        let g:erlangCheckFile="~/.vim/bundle/vimerl/compiler/erlang_check_file.erl"
 
         " vimerl gives us omnicompletion based on erlang's natural
         " introspection abilities, so let's use it.
