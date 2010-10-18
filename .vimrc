@@ -219,6 +219,14 @@ set nocompatible
     " <cr> to make sure we don't override anything
     nnoremap <cr> :noh<cr><cr>
 
+    " Lets us quickly search through all files in the current directory
+    " recursively for the word the cursor is on.
+    map <leader>gr :grep -r <cword> *<cr>
+
+    " Recursively search for current word in the directory the file 
+    " you are editing exists and down.
+    map <leader>gd :grep -r <cword> %:p:h/*<cr>
+
 " }
 
 
