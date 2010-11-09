@@ -50,6 +50,12 @@ General:
 * l9 - vim scripting library
 * autocomplpop - auto-popup completion menu
 * makegreen - uses test output to show a green/red bar at the bottom
+* taglist - gives you code browsing with a ctags file
+* scmdiff - view diff between current file and previous in source control
+
+C:
+
+* a.vim - quickly switch between header and code files
 
 Python:
 
@@ -59,10 +65,13 @@ Python:
 * nosecompiler - uses the nosetests command run tests based on convention
 #### depends on `nose`: $ `sudo easy_install nose`
 
+Erlang:
+
+* vimerl - suite of scripts for erlang (completion, compiler, syntax, etc)
+
 ### VIM Profile TODO
 * Learn more about ctags and how to tie them into projects easily
 * Learn about the builtin plugins that's in the vimruntime directory
-* Python: think about including nose with the profile
 * Python: think about splitting ropevim's python module out as a dependency like nose
 * Python: think about splitting out pyflakes
 * Ruby: everything! (code completion, refactoring, errorformat/makeprg, real-time error squiggles)
