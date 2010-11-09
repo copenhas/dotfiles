@@ -332,6 +332,10 @@ set nocompatible
 " NOTE: Split this out when it becomes bigger
 " General Development {
 
+    " Look for a ctags file starting in current directory and 
+    " working all the way up to root
+    set tags=tags;/
+
     if has('autocmd')
 
         " VIM comes with 'batteries included' you could say Including
