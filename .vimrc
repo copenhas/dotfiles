@@ -234,8 +234,8 @@ set nocompatible
 
     " NERDTree is an excellent directory browser plugin. Lets make it
     " quicker to access by mapping it to '<leader>f'. The <leader>
-    " key is '\' by default.
-    map <leader>f :NERDTreeToggle<cr>
+    " key is '\' by default. If taglist is loaded lets close it first
+    map <leader>f :TlistClose<cr>:NERDTreeToggle<cr>
 
     " Setup some file ignores
     let NERDTreeIgnore=['\.pyc$', '\.beam$']
@@ -325,6 +325,20 @@ set nocompatible
         autocmd FileType erlang compiler erlang
 
     endif
+
+" }
+
+
+" taglist {
+
+    " taglist gives you a handle buffer to browse the ctags for
+    " your code. Use 'ctags -R' at your project root to generate tags.
+    " Or add it to your build script
+
+    " Since <leader>t is used to run tests lets map the tag list
+    " to <leader>c for code tags (ctags). Also if NERDTree is 
+    " loaded then lets close it before we open the tags
+    map <leader>c :NERDTreeClose<cr>:TlistToggle<cr>
 
 " }
 
