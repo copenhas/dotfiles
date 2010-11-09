@@ -19,3 +19,6 @@
 [submodule ".vim/bundle/vimerl"]
 	path = .vim/bundle/vimerl
 	url = git://github.com/jimenezrick/vimerl.git
+[submodule ".vim/bundle/vim-scmdiff/plugin"]
+	path = .vim/bundle/vim-scmdiff/plugin
+	url = git://github.com/ghewgill/vim-scmdiff.git
