@@ -43,6 +43,12 @@ set nocompatible
 
 
 " System {
+
+    " For convenience, when we write changes to our vim profile
+    " auto load them back into our vim session.
+    if has('autocmd')
+        autocmd bufwritepost .vimrc source $MYVIMRC
+    endif
     
     " VIM will try to determine the filetype and setup extra settings
     " This will not work with compability mode on.
@@ -302,10 +308,10 @@ set nocompatible
 
     if has('autocmd')
 
-        " vimerl can use the man pages for completion but with MacPorts
+        " vimerl can use the man pages for completion but with Homebrew 
         " they are located in a different directory then the expected
         " default: /usr/lib/erlang/man
-        let g:erlangManPath="/opt/local/lib/erlang/man"
+        let g:erlangManPath="/usr/local/Cellar/erlang/R14B01/share/man"
 
         " Since we are using pathogen for bundle style plugin management
         " we have to set the location of the check file which is used
