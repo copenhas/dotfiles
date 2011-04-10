@@ -17,7 +17,7 @@
 
     " Setting the default size of the window to fit my environment
     set lines=156
-    set columns=119
+    "set columns=119
 
 " }
 

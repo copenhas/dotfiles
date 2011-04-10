@@ -165,10 +165,10 @@ set nocompatible
     " You use the Ctrl + w + movement to move focus between 
     " split buffers on screen. Just mapping it to the 
     " quicker Ctrl + movement.
-    map <C-h> <C-w>h  
-    map <C-j> <C-w>j
-    map <C-k> <C-w>k
-    map <C-l> <C-w>l
+    no <C-h> <C-w>h  
+    no <C-j> <C-w>j
+    no <C-k> <C-w>k
+    no <C-l> <C-w>l
 
     " Keeps buffers open when you start to edit another file. They
     " are just kept in the background or hidden from view. Access
