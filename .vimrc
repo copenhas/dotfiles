@@ -249,6 +249,20 @@ set nocompatible
 " }
 
 
+" taglist {
+
+    " taglist gives you a handle buffer to browse the ctags for
+    " your code. Use 'ctags -R' at your project root to generate tags.
+    " Or add it to your build script
+
+    " Since <leader>t is used to run tests lets map the tag list
+    " to <leader>c for code tags (ctags). Also if NERDTree is 
+    " loaded then lets close it before we open the tags
+    map <leader>c :NERDTreeClose<cr>:TlistToggle<cr>
+
+" }
+
+
 " Python {
 
     " ropevim gives us refactoring abilities for python
@@ -335,20 +349,6 @@ set nocompatible
 " }
 
 
-" taglist {
-
-    " taglist gives you a handle buffer to browse the ctags for
-    " your code. Use 'ctags -R' at your project root to generate tags.
-    " Or add it to your build script
-
-    " Since <leader>t is used to run tests lets map the tag list
-    " to <leader>c for code tags (ctags). Also if NERDTree is 
-    " loaded then lets close it before we open the tags
-    map <leader>c :NERDTreeClose<cr>:TlistToggle<cr>
-
-" }
-
-
 " NOTE: Split this out when it becomes bigger
 " General Development {
 
@@ -367,12 +367,15 @@ set nocompatible
         autocmd FileType css set omnifunc=csscomplete#CompleteCSS
         autocmd FileType sql set omnifunc=sqlcomplete#Complete
         autocmd FileType c set omnifunc=ccomplete#Complete
-        
-        " I saw this in the plugin but need to check it's 
-        " documentation still
-        "autocmd FileType ruby :rubycomplete#Init()
         autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
+    endif
+
+    " Search up the path for a proj.vim file so we can wire in
+    " extra settings on a per project basis.
+    let proj_settings=findfile('proj.vim', '.;/')
+    if proj_settings
+        source proj_settings
     endif
 
 " }
