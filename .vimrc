@@ -374,8 +374,8 @@ set nocompatible
     " Search up the path for a proj.vim file so we can wire in
     " extra settings on a per project basis.
     let proj_settings=findfile('proj.vim', '.;/')
-    if proj_settings
-        source proj_settings
+    if filereadable($proj_settings)
+        source $proj_settings
     endif
 
 " }
