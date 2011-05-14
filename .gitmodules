@@ -19,9 +19,9 @@
 [submodule ".vim/bundle/vim-scmdiff/plugin"]
 	path = .vim/bundle/vim-scmdiff/plugin
 	url = git://github.com/ghewgill/vim-scmdiff.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = git://github.com/mattheyan/syntastic.git
 [submodule ".vim/bundle/l9"]
 	path = .vim/bundle/l9
 	url = git://github.com/vim-scripts/L9.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/mattheyan/syntastic.git
