@@ -396,6 +396,6 @@ set nocompatible
     let g:syntastic_enable_signs=1
 
     " Automatically open and close the location list
-    let g:syntastic_auto_loc_list=2
+    let g:syntastic_auto_loc_list=1
 
 " }
