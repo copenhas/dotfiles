@@ -380,12 +380,22 @@ set nocompatible
 
 " }
 
-" JavaScript Syntax and Lint {
+" Syntastic Settings {
 
+    " See the Syntastic documentation for more information
+    " https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt
+
+    " Enable the statusline, which appears
+    " when syntax errors are detected
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
+
+    " Signs are placed beside lines with syntax errors, where
+    " a different sign is used for errors and warnings
     let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
+
+    " Automatically open and close the location list
+    let g:syntastic_auto_loc_list=2
 
 " }
