@@ -9,5 +9,8 @@ export CLICOLOR=1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 rvm 1.9.2
 
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+
 . ~/.nvm/nvm.sh
-nvm use v0.4.5
+nvm use default 
+
