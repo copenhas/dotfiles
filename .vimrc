@@ -236,6 +236,13 @@ set nocompatible
 " }
 
 
+" FuzzyFinder {
+
+    map <leader>s :FufFile<cr>
+
+" }
+
+
 " NERDTree {
 
     " NERDTree is an excellent directory browser plugin. Lets make it
