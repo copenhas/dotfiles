@@ -251,44 +251,34 @@ set nocompatible
 " }
 
 
-" FuzzyFinder {
+" NOTE: Split this out when it becomes bigger
+" General Development {
 
-    "FuzzyFinder gives you the ability to use glob patterns to find
-    "files from your current working directory. It provides several
-    "modes and you'll have to check the docs.
-    
-    "shortcut to search for files. Use **/ to
-    "match any file in a directory from your CWD down. Also * to match
-    "anything, ex: ./script/*.js to match any javascript file.
-    map <leader>s :FufFile<cr>
+    " Look for a ctags file starting in current directory and 
+    " working all the way up to root
+    set tags=tags;/
 
-" }
+    if has('autocmd')
 
+        " VIM comes with 'batteries included' you could say Including
+        " these auto-completion scripts for web Development
+        " These are located in your vimruntime directory
+        " check ':help vimruntime'
+        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+        autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+        autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+        autocmd FileType sql set omnifunc=sqlcomplete#Complete
+        autocmd FileType c set omnifunc=ccomplete#Complete
+        autocmd FileType ruby set omnifunc=rubycomplete#Complete
 
-" NERDTree {
+    endif
 
-    " NERDTree is an excellent directory browser plugin. Lets make it
-    " quicker to access by mapping it to '<leader>f'. The <leader>
-    " key is '\' by default. If taglist is loaded lets close it first
-    map <leader>f :TagbarClose<cr>:NERDTreeToggle<cr>
-
-    " Setup some file ignores
-    let NERDTreeIgnore=['\.pyc$', '\.beam$']
-
-" }
-
-
-" tagbar {
-
-    " tagbar gives you a buffer of the tags sorted by scope.
-    " Check out Exuberant Tags project or :help tags for more info.
-    " Use 'ctags -R' at your project root to generate tags.
-    " Or add it to your build script
-
-    " Since <leader>t is used to run tests lets map the tag list
-    " to <leader>c for code tags (ctags). Also if NERDTree is 
-    " loaded then lets close it before we open the tags
-    map <leader>c :NERDTreeClose<cr>:TagbarToggle<cr>
+    " Search up the path for a proj.vim file so we can wire in
+    " extra settings on a per project basis.
+    let proj_settings=findfile('proj.vim', '.;/')
+    if filereadable(proj_settings)
+        source `=proj_settings`
+    endif
 
 " }
 
@@ -379,36 +369,47 @@ set nocompatible
 " }
 
 
-" NOTE: Split this out when it becomes bigger
-" General Development {
+" FuzzyFinder {
 
-    " Look for a ctags file starting in current directory and 
-    " working all the way up to root
-    set tags=tags;/
-
-    if has('autocmd')
-
-        " VIM comes with 'batteries included' you could say Including
-        " these auto-completion scripts for web Development
-        " These are located in your vimruntime directory
-        " check ':help vimruntime'
-        autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-        autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-        autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-        autocmd FileType sql set omnifunc=sqlcomplete#Complete
-        autocmd FileType c set omnifunc=ccomplete#Complete
-        autocmd FileType ruby set omnifunc=rubycomplete#Complete
-
-    endif
-
-    " Search up the path for a proj.vim file so we can wire in
-    " extra settings on a per project basis.
-    let proj_settings=findfile('proj.vim', '.;/')
-    if filereadable(proj_settings)
-        source `=proj_settings`
-    endif
+    "FuzzyFinder gives you the ability to use glob patterns to find
+    "files from your current working directory. It provides several
+    "modes and you'll have to check the docs.
+    
+    "shortcut to search for files. Use **/ to
+    "match any file in a directory from your CWD down. Also * to match
+    "anything, ex: ./script/*.js to match any javascript file.
+    map <leader>s :FufFile<cr>
 
 " }
+
+
+" NERDTree {
+
+    " NERDTree is an excellent directory browser plugin. Lets make it
+    " quicker to access by mapping it to '<leader>f'. The <leader>
+    " key is '\' by default. If taglist is loaded lets close it first
+    map <leader>f :TagbarClose<cr>:NERDTreeToggle<cr>
+
+    " Setup some file ignores
+    let NERDTreeIgnore=['\.pyc$', '\.beam$']
+
+" }
+
+
+" tagbar {
+
+    " tagbar gives you a buffer of the tags sorted by scope.
+    " Check out Exuberant Tags project or :help tags for more info.
+    " Use 'ctags -R' at your project root to generate tags.
+    " Or add it to your build script
+
+    " Since <leader>t is used to run tests lets map the tag list
+    " to <leader>c for code tags (ctags). Also if NERDTree is 
+    " loaded then lets close it before we open the tags
+    map <leader>c :NERDTreeClose<cr>:TagbarToggle<cr>
+
+" }
+
 
 " Syntastic Settings {
 
