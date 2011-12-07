@@ -48,6 +48,8 @@ set nocompatible
     " auto load them back into our vim session.
     if has('autocmd')
         autocmd bufwritepost .vimrc source $MYVIMRC
+        " for windows
+        autocmd bufwritepost _vimrc source $MYVIMRC
     endif
     
     " VIM will try to determine the filetype and setup extra settings
@@ -179,6 +181,19 @@ set nocompatible
 " }
 
 
+" Tabs {
+
+    "Give you the familiar Ctrl+N in normal model to create a new tab. 
+    ":tabs can list out the tabs and :tabn # to switch to a specific tab
+    no <C-n> :tabnew<cr>    
+
+    "Ctrl+Tab to cycle forward through your tabs. use :tabPrevious to
+    "cycle backwards.
+    no <C-tab> :tabNext<cr>
+
+" }
+
+
 " Styling {
 
     " Show us where the cursor is in the bottom lower right
@@ -238,6 +253,13 @@ set nocompatible
 
 " FuzzyFinder {
 
+    "FuzzyFinder gives you the ability to use glob patterns to find
+    "files from your current working directory. It provides several
+    "modes and you'll have to check the docs.
+    
+    "shortcut to search for files. Use **/ to
+    "match any file in a directory from your CWD down. Also * to match
+    "anything, ex: ./script/*.js to match any javascript file.
     map <leader>s :FufFile<cr>
 
 " }
@@ -403,7 +425,11 @@ set nocompatible
     " a different sign is used for errors and warnings
     let g:syntastic_enable_signs=1
 
-    " Automatically open and close the location list
-    let g:syntastic_auto_loc_list=1
+    " Automatically close the location list when no errors only
+    "does not auto open
+    let g:syntastic_auto_loc_list=2
+
+    " Opens the location list for the errors syntastic discovers
+    map <leader>e :Errors<cr>
 
 " }
