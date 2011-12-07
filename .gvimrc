@@ -15,9 +15,29 @@
 
 " System {
 
-    " Setting the default size of the window to fit my environment
-    set lines=156
-    "set columns=119
+    "auto load this config if it changes
+    if has('autocmd')
+        autocmd bufwritepost .gvimrc source $MYGVIMRC
+        " for windows
+        autocmd bufwritepost _gvimrc source $MYGVIMRC
+    endif
+
+    "max out the gvim window
+    set lines=999
+    set columns=999
+
+    " always default the font to courier new
+    if has("gui_gtk2")
+        set guifont=Courier\ New\ 10
+    elseif has("gui_photon")
+        set guifont=Courier\ New:s10
+    elseif has("gui_kde")
+        set guifont=Courier\ New/10/-1/5/50/0/0/0/1/0
+    elseif has("x11")
+        set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+    else
+        set guifont=Courier_New:h10:cDEFAULT
+    endif
 
 " }
 
